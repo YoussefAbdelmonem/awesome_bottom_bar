@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TabItem<T> {
-  final T icon;
+  final String icon;
   final String? title;
   final Widget? count;
   final String? key;
@@ -11,5 +11,5 @@ class TabItem<T> {
     this.title,
     this.count,
     this.key,
-  }) : assert(icon is IconData || icon is Widget, 'TabItem only support IconData and Widget');
+  }) : assert(icon is String || icon is Widget, 'TabItem only support IconData and Widget');
 }

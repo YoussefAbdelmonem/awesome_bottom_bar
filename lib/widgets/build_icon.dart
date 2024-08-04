@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../tab_item.dart';
 import '../count_style.dart';
@@ -19,20 +20,24 @@ class BuildIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget icon = Icon(
+    Widget icon = SvgPicture.asset(
       item.icon,
-      size: iconSize,
-      color: iconColor,
+      width: iconSize,
     );
+    //  Icon(
+    //   item.icon,
+    //   size: iconSize,
+    //   color: iconColor,
+    // );
     if (item.count is Widget) {
       double sizeBadge = countStyle?.size ?? 18;
 
       return Stack(
         clipBehavior: Clip.none,
         children: [
-          Icon(
+          SvgPicture.asset(
             item.icon,
-            size: iconSize,
+            width: iconSize,
             color: iconColor,
           ),
           PositionedDirectional(
